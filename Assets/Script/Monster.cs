@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+
 
     // Update is called once per frame
     public void OnTriggerEnter2D(Collider2D collision)

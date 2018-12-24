@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-    public GameObject bullet;
-    public Transform gun;
-    float NextFire = 0.3f;
-    float FireCD;
+    [System.Serializable]
+    public class playerStats
+    {
+        public int Health = 100;
+    }
 
-    // Update is called once per frame
+    public playerStats playerStat = new playerStats();
+
     void FixedUpdate()
     {
-        if(FireCD<NextFire)
-        FireCD += Time.deltaTime;
-
         // 移动
         if (Input.GetKey(KeyCode.W))
             transform.Translate(0, 0.1f, 0, Space.World);
@@ -27,12 +26,14 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.D))
             transform.Translate(0.1f, 0, 0, Space.World);
-        /*
-        if (Input.GetMouseButton(0) && FireCD >= NextFire)
+    }
+
+    public void DamagePlayer(int damage)
+    {
+        playerStat.Health -= damage;
+        if (playerStat.Health <= 0)
         {
-            Instantiate(bullet, new Vector3(gun.position.x, gun.position.y, 0), gun.rotation);
-            FireCD = 0;
+            Destroy(gameObject);
         }
-        */
     }
 }
