@@ -27,11 +27,12 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.D))
             transform.Translate(0.1f, 0, 0, Space.World);
-
+        /*
         if (Input.GetMouseButton(0) && FireCD >= NextFire)
         {
             Instantiate(bullet, new Vector3(gun.position.x, gun.position.y, 0), gun.rotation);
             FireCD = 0;
         }
+        */
     }
 }
