@@ -7,10 +7,30 @@ public class PlayerController : MonoBehaviour {
     [System.Serializable]
     public class playerStats
     {
-        public int Health = 100;
+        public int maxHp= 100;
+        int _currentHp;
+        public int currentHp
+        {
+            get { return _currentHp; }
+            set { _currentHp = Mathf.Clamp(value, 0, maxHp);  }
+        }
+
+        public void FullHp()
+        {
+            currentHp = maxHp;
+        }
     }
 
     public playerStats playerStat = new playerStats();
+
+    [SerializeField]
+    private Hp playerHp;
+
+    void Start()
+    {
+        playerStat.FullHp();
+        playerHp.SetHealth(playerStat.currentHp, playerStat.maxHp);
+    }
 
     void FixedUpdate()
     {
@@ -30,10 +50,11 @@ public class PlayerController : MonoBehaviour {
 
     public void DamagePlayer(int damage)
     {
-        playerStat.Health -= damage;
-        if (playerStat.Health <= 0)
+        playerStat.currentHp -= damage;
+        if (playerStat.currentHp <= 0)
         {
             Destroy(gameObject);
         }
+        playerHp.SetHealth(playerStat.currentHp, playerStat.maxHp);
     }
 }

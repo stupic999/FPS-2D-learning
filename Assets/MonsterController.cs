@@ -7,17 +7,38 @@ public class MonsterController : MonoBehaviour
     [System.Serializable]
     public class monsterStats
     {
-        public int Health=100;
+        public int maxHp = 100;
+        int _currentHp;
+        public int currentHp
+        {
+            get { return _currentHp; }
+            set { _currentHp = Mathf.Clamp(value, 0, maxHp); }
+        }
+
+        public void FullHp()
+        {
+            currentHp = maxHp;
+        }
     }
 
-    public monsterStats emyStats=new monsterStats();
+    public monsterStats emyStat = new monsterStats();
+
+    [SerializeField]
+    private Hp monsterHp;
+
+    void Start()
+    {
+        emyStat.FullHp();
+        monsterHp.SetHealth(emyStat.currentHp, emyStat.maxHp);
+    }     
 
     public void DamageEmy(int damage)
     {
-        emyStats.Health -= damage;
-        if (emyStats.Health <= 0)
+        emyStat.currentHp -= damage;
+        if (emyStat.currentHp<= 0)
         {
             Destroy(gameObject);
         }
+        monsterHp.SetHealth(emyStat.currentHp, emyStat.maxHp);
     }
 }
