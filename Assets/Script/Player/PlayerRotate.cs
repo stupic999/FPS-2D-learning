@@ -20,10 +20,5 @@ public class PlayerRotate : MonoBehaviour {
         float rotZ = Mathf.Atan2(dif.y, dif.x) * Mathf.Rad2Deg;
 
         transform.rotation = Quaternion.Euler(0f, 0f, rotZ + rotOffset);
-        /*
-            Vector2 mousePosition = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
-            Vector2 direction = mousePosition - new Vector2(transform.position.x,transform.position.y);
-            transform.rotation = Quaternion.LookRotation(direction);
-            */
     }
 }

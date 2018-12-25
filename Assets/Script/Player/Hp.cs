@@ -17,5 +17,4 @@ public class Hp : MonoBehaviour {
         healthbarRect.localScale = new Vector3(value, healthbarRect.localScale.y, healthbarRect.localScale.z);
         healthbarText.text = currentHp + "/" + maxHp+"HP";
     }
-
 }

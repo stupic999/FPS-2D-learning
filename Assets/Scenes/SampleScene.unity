@@ -228,12 +228,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b279f09267311ec49a5d13f265acb0de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1670260685844548, guid: 829fc1cd9ba6c70428ae819c6c003bda, type: 2}
+  bullet: {fileID: 1057791993949676, guid: 2a04bb0d5b12f37499c0d455affb15bf, type: 2}
   gun: {fileID: 307069640}
   emy:
     serializedVersion: 2
     m_Bits: 256
-  damage: 10
 --- !u!1 &472517671
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,7 +278,6 @@ MonoBehaviour:
   emy:
     serializedVersion: 2
     m_Bits: 256
-  damage: 10
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,7 +400,6 @@ MonoBehaviour:
   emy:
     serializedVersion: 2
     m_Bits: 256
-  damage: 10
 --- !u!1 &574155267
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,7 +502,6 @@ MonoBehaviour:
   emy:
     serializedVersion: 2
     m_Bits: 256
-  damage: 10
 --- !u!1 &793647316
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,94 +697,6 @@ Transform:
   - {fileID: 524796603}
   m_Father: {fileID: 1750667445}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1190522754
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1190522758}
-  - component: {fileID: 1190522757}
-  - component: {fileID: 1190522756}
-  - component: {fileID: 1190522755}
-  m_Layer: 0
-  m_Name: Sphere
-  m_TagString: Finish
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!58 &1190522755
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1190522754}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
---- !u!23 &1190522756
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1190522754}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &1190522757
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1190522754}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1190522758
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1190522754}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.77, y: 1.41, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1218498701
 GameObject:
@@ -1292,7 +1200,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1966022486
 GameObject:
@@ -1307,6 +1215,7 @@ GameObject:
   - component: {fileID: 1966022487}
   - component: {fileID: 1966022491}
   - component: {fileID: 1966022492}
+  - component: {fileID: 1966022493}
   m_Layer: 8
   m_Name: Monster
   m_TagString: Enemy
@@ -1323,7 +1232,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1412,6 +1321,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthbarRect: {fileID: 941214287}
   healthbarText: {fileID: 294262438}
+--- !u!50 &1966022493
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1966022486}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2091909240
 GameObject:
   m_ObjectHideFlags: 0
@@ -1514,4 +1443,3 @@ MonoBehaviour:
   emy:
     serializedVersion: 2
     m_Bits: 256
-  damage: 10

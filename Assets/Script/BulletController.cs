@@ -4,38 +4,30 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour {
 
-    public float bulletSpd = 300f;
+    public float bulletSpd = 1f;
     float destroyTime=200;
-    float time;
-    public GameObject mon;
-
-    public Rigidbody2D bullet;
-
-    void Start()
-    {
-        bullet.GetComponent<Rigidbody2D>();
-    }
+    float surviveTime;
+    public int damage = 10;
 
     void Update () {
-        time+= Time.deltaTime;
-        /*
-        transform.position = Vector2.MoveTowards(transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition), Time.deltaTime * bulletSpd);
-        */
-        bullet.velocity=(transform.forward*bulletSpd);
+        surviveTime += Time.deltaTime;
 
-        if (transform.position == mon.transform.position)
-        {
-            Debug.Log("wtf");
-        }
+        transform.Translate(-Vector2.up * Time.deltaTime * bulletSpd, Space.Self);
 
-        if (time >= destroyTime)
+        if (surviveTime >= destroyTime)
         {
             Destroy(gameObject);
         }
 	}
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(12);
+        if (collision.tag != "Player")
+            Destroy(gameObject);
+        MonsterController emy = collision.GetComponent<MonsterController>();
+        if (emy != null)
+        {
+            emy.DamageEmy(damage);
+        }
     }
 }
